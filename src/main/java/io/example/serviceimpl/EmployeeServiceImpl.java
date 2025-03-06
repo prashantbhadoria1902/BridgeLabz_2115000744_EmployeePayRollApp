@@ -13,7 +13,7 @@ import java.util.List;
 public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired
-    private EmployeeRepository employeeRepository; // Inject repository
+    private EmployeeRepository employeeRepository;
 
     @Override
     public Employee addEmployee(EmployeeDTO employeeDTO) {
@@ -22,11 +22,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.setSalary(employeeDTO.getSalary());
         employee.setDepartment(employeeDTO.getDepartment());
 
-        return employeeRepository.save(employee); // Save to database
+        return employeeRepository.save(employee); // Saves to MySQL
     }
 
     @Override
     public List<Employee> getAllEmployees() {
-        return employeeRepository.findAll(); // Fetch from database
+        return employeeRepository.findAll(); // Retrieves from MySQL
     }
 }

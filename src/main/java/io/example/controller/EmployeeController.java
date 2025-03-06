@@ -13,15 +13,17 @@ import java.util.List;
 public class EmployeeController {
 
     @Autowired
-    private EmployeeService employeeService; // Inject service
+    private EmployeeService employeeService;
 
+    // Create an Employee
     @PostMapping("/add")
     public Employee addEmployee(@RequestBody EmployeeDTO employeeDTO) {
-        return employeeService.addEmployee(employeeDTO); // Call service method
+        return employeeService.addEmployee(employeeDTO);
     }
 
+    // Get all Employees
     @GetMapping("/all")
     public List<Employee> getAllEmployees() {
-        return employeeService.getAllEmployees(); // Fetch from service
+        return employeeService.getAllEmployees();
     }
 }
